@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <div class="nav-left">
+                <h1 class="app-title">Stinky Notes</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search notes...">
+                    <span class="search-icon">&#128269;</span>
+                </div>
+            </div>
+            <div class="profile">
+                <div class="avatar">U</div>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <nav>
+                    <ul>
+                        <li class="active"><a href="#">Add New</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Archive</a></li>
+                        <li><a href="#">Trash</a></li>
+                    </ul>
+                </nav>
+                <div class="promo">
+                    <p>Upgrade to Pro for more features!</p>
+                    <button class="upgrade-btn">Upgrade Pro</button>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <div class="content-area">
+                <!-- Recent Folders Section -->
+                <section class="section recent-folders">
+                    <div class="section-header">
+                        <h2>Recent Folders</h2>
+                        <div class="tabs">
+                            <button class="tab active">Today</button>
+                            <button class="tab">This Week</button>
+                            <button class="tab">This Month</button>
+                        </div>
+                    </div>
+                    <div class="cards-container">
+                        <div class="card new-folder">
+                            <div class="card-content">
+                                <span class="plus-icon">+</span>
+                                <p>New Folder</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- My Notes Section -->
+                <section class="section my-notes">
+                    <div class="section-header">
+                        <h2>My Notes</h2>
+                        <div class="tabs">
+                            <button class="tab active">Today</button>
+                            <button class="tab">This Week</button>
+                            <button class="tab">This Month</button>
+                        </div>
+                    </div>
+                    <div class="cards-container" id="notes-list">
+                        <!-- Notes will be dynamically inserted here -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- Note Editor Modal -->
+    <div class="modal" id="note-editor">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>New Note</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="note-title">Title</label>
+                    <input type="text" id="note-title" placeholder="Enter note title">
+                </div>
+                <div class="form-group">
+                    <label for="note-content">Content</label>
+                    <textarea id="note-content" rows="8" placeholder="Write your note here..."></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary close-modal">Cancel</button>
+                <button class="btn primary" id="save-note">Save Note</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
